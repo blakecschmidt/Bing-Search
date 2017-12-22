@@ -5,8 +5,8 @@ import os
 for i in range(31, 51):
     url = 'https://www.bing.com/search?q=' + str(i)
 
-    controller = webbrowser.get('epiphany')
-    controller.open_new_tab(url)
+    contr = webbrowser.get('epiphany')
+    contr.open_new_tab(url)
 
     time.sleep(20)
 

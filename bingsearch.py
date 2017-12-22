@@ -5,9 +5,8 @@ import os
 for i in range(1, 31):
 
     url = 'https://www.bing.com/search?q=' + str(i)
-
-    # Open URL in new browser window
-    webbrowser.open_new_tab(url) # opens in default browser
+        
+    webbrowser.open_new_tab(url)
 
     time.sleep(20)
 
@@ -17,3 +16,4 @@ for i in range(1, 31):
         time.sleep(10)
 
 os.system("pkill chromium-browse")
+
