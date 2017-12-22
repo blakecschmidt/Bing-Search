@@ -8,21 +8,23 @@ Microsoft Rewards (once you've reached level 2) allows you to get 5 points per s
 
 <b>bingsearchmobile.py</b> does the same thing except with a different browser (with the numbers 31 through 50) in which I could change the User Agent to the iPhone's Safari User Agent so that it thinks I'm viewing from a mobile device.
 
-Because I have these running on a Raspberry Pi Zero running Raspbian Stretch, the best way for me to do the mobile version was to use a browser called Epiphany. You can change this browser to anything you would like as long as you can get it to change to a different User Agent. Also, The reason I have so many <i>time.sleep()</i> lines is because the RPi Zero isn't very powerful and so I needed it to give the computer some time so that it could load the pages. The program also quits every 4 tabs because otherwise the tabs would stop loading.
+Because I have these running on a Raspberry Pi Zero running Raspbian Stretch, the best way for me to do the mobile version was to use a browser called Epiphany. You can change this browser to anything you would like as long as you can get it to change to a different User Agent. Also, The reason I have so many `time.sleep()` lines is because the RPi Zero isn't very powerful and so I needed it to give the computer some time so that it could load the pages. The program also quits every 4 tabs because otherwise the tabs would stop loading.
 
 The reason there are bash scripts included is because crontab won't run the Python scripts correctly due to the webbrowser package causing problems due to the script accessing the GUI so I had to wrap the command in a bash script and change the DISPLAY variable. The bash scripts are what will be ran in crontab.
 
 ## Setup
 
-These setup instructions are tailored to the Raspberry Pi running Raspbian Jessie, although I'm sure the setup on other systems is near identical.
+These setup instructions are tailored to the Raspberry Pi running Raspbian Stretch, although I'm sure the setup on other systems is near identical.
 
 First, download these files to your computer.
 
 Next, open up your Terminal and type
-> crontab -e
+`crontab -e`
 
 Inside crontab, I have added the two lines seen below to run at 5:00 and 5:30 AM every morning
-> 0 5 * * * /full/path/to/directory/bingsearch.sh
-> 30 5 * * * /full/path/to/directory/bingsearchmobile.sh
+```
+0 5 * * * /full/path/to/directory/bingsearch.sh
+30 5 * * * /full/path/to/directory/bingsearchmobile.sh
+```
 
-After saving this, the two Bash scripts should run at the specified times every morning. You may want to check to make sure the cron job runs correctly by first putting a time thats a minute or two after the current time and wait for it to run and make sure it works.
+After saving this, the two bash scripts should run at the specified times every morning. You may want to check to make sure the cron job runs correctly by first putting a time thats a minute or two after the current time and wait for it to run and make sure it works.
