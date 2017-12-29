@@ -21,10 +21,10 @@ First, download these files to your computer.
 If you're using a Raspberry Pi, Epiphany is the easiest browser to do the mobile searches on. Epiphany comes pre-installed with Raspbian but you'll need to change the User Agent so that it displays the mobile version of Bing.
 
 To change the User Agent for Epiphany to iOS 11 Safari, open up your Terminal and enter the command
-`gsettings set org.gnome.Epiphany user-agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A356 Safari/604.1"`
+```gsettings set org.gnome.Epiphany user-agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A356 Safari/604.1"```
 
-Now we need to tell the computer to run our two Python scripts every day, enter this into Terminal:
-`crontab -e`
+Now we need to tell the computer to run our two Python scripts every day, enter this into Terminal
+```crontab -e```
 
 Inside crontab, I have added the two lines seen below to run at 5:00 and 5:30 AM every morning
 ```
