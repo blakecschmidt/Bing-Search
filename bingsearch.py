@@ -1,18 +1,17 @@
 import os
 import time
 import webbrowser
-import requests
 from random import randint
 
-word_site = "http://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain"
-
-response = requests.get(word_site)
-words = response.content.splitlines()
+file = open("words.txt", "r")
+words = []
+for line in file:
+    words.append(line)
 
 for i in range(1, 31):
 
     idx = randint(0, len(words) - 1)
-    search = "What does the word " + words[idx].decode() + " mean?"
+    search = "What does the word " + words[idx] + " mean?"
 
     url = 'https://www.bing.com/search?q=' + search
 
