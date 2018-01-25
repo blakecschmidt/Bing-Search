@@ -27,3 +27,4 @@ for i in range(1, 31):
         time.sleep(10)
 
 os.system("pkill chromium-browse")
+
