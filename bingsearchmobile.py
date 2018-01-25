@@ -1,9 +1,20 @@
 import webbrowser
 import time
 import os
+import requests
+from random import randint
+
+word_site = "http://svnweb.freebsd.org/csrg/share/dict/words?view=co&content-type=text/plain"
+
+response = requests.get(word_site)
+words = response.content.splitlines()
 
 for i in range(31, 51):
-    url = 'https://www.bing.com/search?q=' + str(i)
+
+    idx = randint(0, len(words) - 1)
+    search = "How do you pronounce the word " + words[idx].decode() + "?"
+
+    url = 'https://www.bing.com/search?q=' + search
 
     controller = webbrowser.get('epiphany')
     controller.open_new_tab(url)
