@@ -8,7 +8,7 @@ Microsoft Rewards (once you've reached level 2) allows you to get 5 points per s
 
 <b>bingsearchmobile.py</b> does the same thing except with a different browser (with the sentence "How do you pronounce the word ____?") in which I could change the User Agent to the iPhone's Safari User Agent so that it thinks I'm viewing from a mobile device.
 
-Because I have these running on a Raspberry Pi Zero running Raspbian Stretch, the best way for me to do the mobile version was to use a browser called Epiphany. You can change this browser to anything you would like as long as you can get it to change to a different User Agent. Also, The reason I have so many `time.sleep()` lines is because the RPi Zero isn't very powerful and so I needed it to give the computer some time so that it could load the pages. The program also quits every 4 tabs because otherwise the tabs would stop loading.
+Because I have these running on a Raspberry Pi Zero running Raspbian Stretch, the best way for me to do the mobile version was to use a browser called Epiphany. You can change this browser to anything you would like as long as you can get it to change to a different User Agent. Also, The reason I have so many `time.sleep()` lines is because the RPi Zero isn't very powerful and so I needed it to give the Pi some time so that it could load the pages. The program also quits every 4 tabs because otherwise the tabs would stop loading.
 
 The reason there are bash scripts included is because crontab won't run the Python scripts correctly due to the webbrowser package causing problems due to the script accessing the GUI so I had to wrap the command in a bash script and change the DISPLAY variable. The bash scripts are what will be ran in crontab.
 
@@ -16,7 +16,9 @@ The reason there are bash scripts included is because crontab won't run the Pyth
 
 These setup instructions are tailored to the Raspberry Pi running Raspbian Stretch, although I'm sure the setup on other systems is near identical.
 
-First, download these files to your computer.
+First, download these files to your Pi.
+
+After this, you'll want to edit <b>bingsearch.sh</b> and <b>bingsearchmobile.sh</b> and change the path to their respective .py files to whatever the full path is to those files on your own Pi. It may be the exact same or very similar to what is already on there depending on where you saved these files.
 
 If you're using a Raspberry Pi, Epiphany is the easiest browser to do the mobile searches on. Epiphany comes pre-installed with Raspbian but you'll need to change the User Agent so that it displays the mobile version of Bing.
 
@@ -24,7 +26,7 @@ To change the User Agent for Epiphany to iOS 11 Safari, open up your Terminal an
 
 `gsettings set org.gnome.Epiphany user-agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A356 Safari/604.1"`
 
-Now we need to tell the computer to run our two Python scripts every day, enter this into Terminal
+Now we need to tell the Pi to run our two Python scripts every day, enter this into Terminal
 
 `crontab -e`
 
