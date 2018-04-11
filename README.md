@@ -20,6 +20,8 @@ First, download these files to your Pi.
 
 After this, you'll want to edit <b>bingsearch.sh</b> and <b>bingsearchmobile.sh</b> and change the path to their respective .py files to whatever the full path is to those files on your own Pi. It may be the exact same or very similar to what is already on there depending on where you saved these files.
 
+You'll also need to edit <b>bingsearch.py</b> and <b>bingsearchmobile.py</b> except you'll instead need to ensure that the path to <i>words.txt</i> is the full path to the file on your Pi.
+
 If you're using a Raspberry Pi, Epiphany is the easiest browser to do the mobile searches on. Epiphany comes pre-installed with Raspbian but you'll need to change the User Agent so that it displays the mobile version of Bing.
 
 To change the User Agent for Epiphany to iOS 11 Safari, open up your Terminal and enter the command
