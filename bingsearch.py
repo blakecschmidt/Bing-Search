@@ -3,7 +3,7 @@ import time
 import webbrowser
 from random import randint
 
-file = open("words.txt", "r")
+file = open("/home/pi/Documents/Python/Bing-Search/words.txt", "r")
 words = []
 for line in file:
     words.append(line)
@@ -18,7 +18,7 @@ for i in range(1, 31):
     # Open URL in new browser window
     webbrowser.open_new_tab(url) # opens in default browser
 
-    time.sleep(20)
+    time.sleep(30)
 
     if i % 4 == 0:
         time.sleep(30)

@@ -18,7 +18,7 @@ for i in range(31, 51):
     contr = webbrowser.get('epiphany')
     contr.open_new_tab(url)
 
-    time.sleep(20)
+    time.sleep(30)
 
     if i % 4 == 0:
         time.sleep(20)
