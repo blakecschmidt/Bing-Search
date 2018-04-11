@@ -3,7 +3,7 @@ import time
 import os
 from random import randint
 
-file = open("words.txt", "r")
+file = open("/home/pi/Documents/Python/Bing-Search/words.txt", "r")
 words = []
 for line in file:
     words.append(line)
