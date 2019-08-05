@@ -26,7 +26,7 @@ If you're using a Raspberry Pi, Epiphany is the easiest browser to do the mobile
 
 To change the User Agent for Epiphany to iOS 11 Safari, open up your Terminal and enter the command
 
-`gsettings set org.gnome.Epiphany user-agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A356 Safari/604.1"`
+`gsettings set org.gnome.Epiphany.web:/org/gnome/epiphany user-agent "Mozilla/5.0 (iPhone; CPU iPhone OS 11_0 like Mac OS X) AppleWebKit/604.1.38 (KHTML, like Gecko) Version/11.0 Mobile/15A356 Safari/604.1"`
 
 Now we need to tell the Pi to run our two Python scripts every day, enter this into Terminal
 
