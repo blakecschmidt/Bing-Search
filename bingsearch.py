@@ -3,7 +3,7 @@ import time
 import webbrowser
 from random import randint
 
-file = open("/home/pi/Documents/Python/Bing-Search/words.txt", "r")
+file = open(os.path.join(os.path.dirname(__file__), "./words.txt"), "r")
 words = []
 for line in file:
     words.append(line)
@@ -22,8 +22,8 @@ for i in range(1, 31):
 
     if i % 4 == 0:
         time.sleep(30)
-        os.system("pkill chromium-browse")
+        os.system("pkill chromium-browser")
         time.sleep(10)
 
-os.system("pkill chromium-browse")
+os.system("pkill chromium-browser")
 
