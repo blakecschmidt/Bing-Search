@@ -18,10 +18,10 @@ def desktop_browser():
         time.sleep(10)
 
         if i % 4 == 0:
-            os.system("pkill chromium-browser")
+            os.system("killall chromium-browser")
             time.sleep(10)
 
-    os.system("pkill chromium-browser")
+    os.system("killall chromium-browser")
 
 
 def mobile_browser():
