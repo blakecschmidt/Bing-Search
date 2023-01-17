@@ -8,7 +8,7 @@ from random import randint
 
 
 def desktop_browser():
-    for i in range(0, 30):
+    for i in range(1, 31):
 
         url = f"https://www.bing.com/search?q={wikipedia.random()}"
 
@@ -26,7 +26,7 @@ def desktop_browser():
 
 
 def mobile_browser():
-    for i in range(0, 20):
+    for i in range(1, 21):
 
         url = f"https://www.bing.com/search?q={wikipedia.random()}"
 
