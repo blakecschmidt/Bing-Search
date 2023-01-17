@@ -7,7 +7,7 @@ from random import randint
 
 
 def desktop_browser():
-    for i in range(0, 32):
+    for i in range(0, 30):
 
         url = f"https://www.bing.com/search?q={wikipedia.random()}"
 
@@ -36,10 +36,10 @@ def mobile_browser():
         time.sleep(10)
 
         if i % 4 == 0:
-            os.system("pkill epiphany-browse")
+            os.system("killall epiphany")
             time.sleep(10)
 
-    os.system("pkill epiphany-browse")
+    os.system("killall epiphany")
 
 
 if __name__ == "__main__":
