@@ -16,7 +16,7 @@ def desktop_browser():
         webbrowser.open_new_tab(url)  # opens in default browser
 
         delay = randint(10, 60)
-        time.sleep(10)
+        time.sleep(delay)
 
         if i % 4 == 0:
             os.system("killall chromium-browser")
@@ -34,7 +34,7 @@ def mobile_browser():
         contr.open_new_tab(url)
 
         delay = randint(10, 60)
-        time.sleep(10)
+        time.sleep(delay)
 
         if i % 4 == 0:
             os.system("killall epiphany")
