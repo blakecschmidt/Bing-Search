@@ -1,29 +1,53 @@
 import os
+import sys
 import time
 import webbrowser
+import wikipedia
 from random import randint
 
-file = open(os.path.join(os.path.dirname(__file__), "./words.txt"), "r")
-words = []
-for line in file:
-    words.append(line)
 
-for i in range(1, 31):
+def desktop_browser():
+    for i in range(0, 32):
 
-    idx = randint(0, len(words) - 1)
-    search = "What does the word " + words[idx] + " mean?"
+        url = f"https://www.bing.com/search?q={wikipedia.random()}"
 
-    url = 'https://www.bing.com/search?q=' + search
+        # Open URL in new browser window
+        webbrowser.open_new_tab(url)  # opens in default browser
 
-    # Open URL in new browser window
-    webbrowser.open_new_tab(url) # opens in default browser
-
-    time.sleep(30)
-
-    if i % 4 == 0:
-        time.sleep(30)
-        os.system("pkill chromium-browser")
+        delay = randint(10, 60)
         time.sleep(10)
 
-os.system("pkill chromium-browser")
+        if i % 4 == 0:
+            os.system("pkill chromium-browser")
+            time.sleep(10)
 
+    os.system("pkill chromium-browser")
+
+
+def mobile_browser():
+    for i in range(0, 20):
+
+        url = f"https://www.bing.com/search?q={wikipedia.random()}"
+
+        contr = webbrowser.get('epiphany')
+        contr.open_new_tab(url)
+
+        delay = randint(10, 60)
+        time.sleep(10)
+
+        if i % 4 == 0:
+            os.system("pkill epiphany-browse")
+            time.sleep(10)
+
+    os.system("pkill epiphany-browse")
+
+
+if __name__ == "__main__":
+    input = sys.argv[1]
+
+    if input == "desktop":
+        desktop_browser()
+    elif input == "mobile":
+        mobile_browser()
+    else:
+        print("Don't understand input")
