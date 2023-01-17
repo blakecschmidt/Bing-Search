@@ -30,7 +30,7 @@ def mobile_browser():
         url = f"https://www.bing.com/search?q={wikipedia.random()}"
 
         contr = webbrowser.get('epiphany')
-        contr.open_new(url)
+        contr.open_new_tab(url)
 
         delay = randint(10, 60)
         time.sleep(10)
